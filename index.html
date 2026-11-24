@@ -30,6 +30,14 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=984294234325609&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<!-- Google Tag Manager (carrega após o load, para não atrasar a 1.ª pintura) -->
+<script>
+window.dataLayer=window.dataLayer||[];
+window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+(function(){function inj(){var j=document.createElement('script');j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-WS7SBNLV';document.head.appendChild(j)}
+if(document.readyState==='complete')inj();else window.addEventListener('load',inj)})();
+</script>
+<!-- End Google Tag Manager -->
 <style>
 /* Fontes locais (latin, variáveis): sem pedidos a domínios externos */
 @font-face{font-family:'Fraunces';font-style:normal;font-weight:600 800;font-display:swap;src:url(fonts/fraunces.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -307,6 +315,9 @@ footer p{margin-bottom:8px}
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS7SBNLV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- Barra marquee -->
 <div class="ticker">
@@ -591,6 +602,25 @@ var CHECKOUT = { essencial: "", completo: "" }; // ex.: "https://pay.hotmart.com
   document.getElementById('cd-d').textContent = p(Math.floor(ms/864e5)); document.getElementById('cd-h').textContent = p(Math.floor(ms%864e5/36e5));
   document.getElementById('cd-m').textContent = p(Math.floor(ms%36e5/6e4)); document.getElementById('cd-s').textContent = p(Math.floor(ms%6e4/1e3)); }
  tick(); setInterval(tick, 1000);
+})();
+</script>
+<script>
+/* Funil para GTM/GA4 (sem eventos de compra): scroll, secção de planos e cliques nos botões */
+(function(){
+ var dl=window.dataLayer=window.dataLayer||[];
+ // scroll 25/50/75/90
+ var marks=[25,50,75,90],sent={};
+ function onScroll(){var h=document.documentElement.scrollHeight-window.innerHeight;if(h<=0)return;var p=Math.round(window.scrollY/h*100);
+  marks.forEach(function(m){if(p>=m&&!sent[m]){sent[m]=1;dl.push({event:'scroll_depth',percent:m})}})}
+ window.addEventListener('scroll',onScroll,{passive:true});
+ // chegada à secção de planos
+ var pl=document.getElementById('planos');
+ if(pl&&'IntersectionObserver' in window){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){dl.push({event:'view_planos'});o.disconnect()}})},{threshold:.25});o.observe(pl)}
+ // cliques nos botões
+ var ctas=document.querySelectorAll('a.btn');
+ ctas.forEach(function(a,i){a.addEventListener('click',function(){
+  var pos=a.dataset.plan?('plano_'+a.dataset.plan):('cta_'+(i+1));
+  dl.push({event:'cta_click',cta_position:pos,cta_text:(a.textContent||'').trim().slice(0,60)})})});
 })();
 </script>
 </body>
