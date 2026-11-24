@@ -8,18 +8,19 @@
 <meta property="og:title" content="Este ano, ninguém fica de fora da Consoada">
 <meta property="og:description" content="54 cartinhas para a mesa de Natal. PDF pronto a imprimir em 15 minutos.">
 <meta name="theme-color" content="#7A1620">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,600&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/nunito.woff2" as="font" type="font/woff2" crossorigin>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
+n.queue=[];
+function inj(){t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+s.parentNode.insertBefore(t,s)}
+if(b.readyState==='complete')inj();else f.addEventListener('load',inj)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '984294234325609');
 fbq('track', 'PageView');
@@ -29,6 +30,10 @@ src="https://www.facebook.com/tr?id=984294234325609&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 <style>
+/* Fontes locais (latin, variáveis): sem pedidos a domínios externos */
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:600 800;font-display:swap;src:url(fonts/fraunces.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:500 600;font-display:swap;src:url(fonts/fraunces-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Nunito';font-style:normal;font-weight:400 900;font-display:swap;src:url(fonts/nunito.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 /* ===== Tokens (paleta do produto: vinho, verde-pinho, dourado, creme) ===== */
 :root{
  --wine:#7A1620;--wine2:#5C0F17;--red:#A3212B;--pine:#1E5B3F;--pine2:#14422D;--cta1:#22A35A;--cta2:#167A43;
@@ -573,7 +578,10 @@ var CHECKOUT = { essencial: "", completo: "" }; // ex.: "https://pay.hotmart.com
   els.forEach(function(el){ io.observe(el); });
  } else { els.forEach(function(el){ el.classList.add('in'); }); }
  // fotos reais: aparecem quando o ficheiro existir em /images
- document.querySelectorAll('.photo[data-src]').forEach(function(el){ var i = new Image(); i.onload = function(){ el.style.backgroundImage='url('+el.dataset.src+')'; el.classList.add('loaded'); }; i.src = el.dataset.src; });
+ (function(){ function load(el){ var i = new Image(); i.onload = function(){ el.style.backgroundImage='url('+el.dataset.src+')'; el.classList.add('loaded'); }; i.src = el.dataset.src; }
+  var ph = document.querySelectorAll('.photo[data-src]');
+  if ('IntersectionObserver' in window) { var po = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ load(e.target); po.unobserve(e.target); } }); }, {rootMargin:'400px 0px'}); ph.forEach(function(el){ po.observe(el); }); }
+  else { ph.forEach(load); } })();
  // contagem real até à Consoada: 24/12 às 20h, hora de Lisboa (UTC no inverno)
  var target = Date.UTC(new Date().getUTCFullYear(), 11, 24, 20, 0, 0);
  function p(n){ return String(n).padStart(2,'0'); }
