@@ -428,7 +428,7 @@ footer p{margin-bottom:8px}
  </div>
  <div class="gal rev" aria-label="Páginas do PDF"><div class="row"><div class="it pg"><img src="images/preview-capa.webp" alt="Capa do PDF" loading="lazy"></div><div class="it pg"><img src="images/preview-como-fazer.webp" alt="Guia do Ritual da Cestinha" loading="lazy"></div><div class="it pg"><img src="images/preview-folha.webp" alt="Folha com 9 cartinhas" loading="lazy"></div><div class="it pg"><img src="images/preview-lugar-a-mesa.webp" alt="Cartinha dourada e Oração da Mesa" loading="lazy"></div><div class="it pg"><img src="images/capa-produto.webp" alt="Capa das Cartinhas da Consoada" loading="lazy"></div></div><div class="row" aria-hidden="true"><div class="it pg"><img src="images/preview-capa.webp" alt="Capa do PDF" loading="lazy"></div><div class="it pg"><img src="images/preview-como-fazer.webp" alt="Guia do Ritual da Cestinha" loading="lazy"></div><div class="it pg"><img src="images/preview-folha.webp" alt="Folha com 9 cartinhas" loading="lazy"></div><div class="it pg"><img src="images/preview-lugar-a-mesa.webp" alt="Cartinha dourada e Oração da Mesa" loading="lazy"></div><div class="it pg"><img src="images/capa-produto.webp" alt="Capa das Cartinhas da Consoada" loading="lazy"></div></div></div>
  <p class="wrap rv" style="text-align:center;font-weight:800;margin-top:14px">Espreite por dentro do PDF ↑</p>
- <div class="cta-wrap rv wrap"><a class="btn js-cta" href="#planos">Quero as minhas cartinhas</a></div>
+ <div class="cta-wrap rv wrap"><a class="btn js-cta" href="https://pay.hotmart.com/O108649585J?off=87iprkux">Quero as minhas cartinhas</a></div>
 </section>
 
 <!-- 6. TEMAS -->
@@ -502,7 +502,7 @@ footer p{margin-bottom:8px}
      <li class="no">12 postais «Quem Está Longe» para WhatsApp</li>
      <li class="no">24 etiquetas de prendas com bênção</li>
     </ul>
-    <a class="btn light js-checkout" data-plan="essencial" href="#planos">Quero só o essencial</a>
+    <a class="btn light js-checkout" data-plan="essencial" href="https://pay.hotmart.com/O108649585J?off=87iprkux">Quero só o essencial</a>
    </div>
    <div class="plan best rv">
     <span class="tag">⭐ Recomendado</span>
@@ -519,7 +519,7 @@ footer p{margin-bottom:8px}
      <li><b>12 postais «Quem Está Longe»</b> para enviar pelo WhatsApp na Noite de Natal</li>
      <li><b>24 etiquetas de prendas</b> com mensagens de bênção</li>
     </ul>
-    <a class="btn js-checkout" data-plan="completo" href="#planos">Quero o completo</a>
+    <a class="btn js-checkout" data-plan="completo" href="https://pay.hotmart.com/O108649585J?off=wuz5hg2f">Quero o completo</a>
     <p class="more">Por só mais €5</p>
    </div>
   </div>
@@ -561,7 +561,7 @@ footer p{margin-bottom:8px}
   <h2 class="rv">A Consoada é daqui a…</h2>
   <div class="count" id="count"><div><b id="cd-d">00</b><span>dias</span></div><div><b id="cd-h">00</b><span>horas</span></div><div><b id="cd-m">00</b><span>min</span></div><div><b id="cd-s">00</b><span>seg</span></div></div>
   <p class="rv">Imprima hoje, recorte amanhã e, no dia 24, ponha a cestinha na mesa. Este ano, ninguém fica de fora.</p>
-  <a class="btn js-cta" href="#planos">Quero as minhas cartinhas</a>
+  <a class="btn js-cta" href="https://pay.hotmart.com/O108649585J?off=87iprkux">Quero as minhas cartinhas</a>
  </div>
 </section>
 
@@ -576,11 +576,12 @@ footer p{margin-bottom:8px}
 
 <script>
 /* ====== CONFIGURAR: links de checkout (Hotmart/Cakto) ====== */
-var CHECKOUT = { essencial: "", completo: "" }; // ex.: "https://pay.hotmart.com/XXXX?checkoutMode=10"
+var CHECKOUT = { essencial: "https://pay.hotmart.com/O108649585J?off=87iprkux", completo: "https://pay.hotmart.com/O108649585J?off=wuz5hg2f" };
 (function(){
  var qs = location.search ? location.search.slice(1) : "";
- document.querySelectorAll('.js-checkout').forEach(function(a){
-  var url = CHECKOUT[a.dataset.plan];
+ // todos os botões vão direto ao checkout (os genéricos usam o Essencial); mantém os UTMs
+ document.querySelectorAll('a.btn').forEach(function(a){
+  var url = CHECKOUT[a.dataset.plan || 'essencial'];
   if (url) a.href = url + (qs ? (url.indexOf('?')>-1?'&':'?') + qs : '');
   a.addEventListener('click', function(){ if (window.fbq) fbq('track','InitiateCheckout',{value:a.dataset.plan==='completo'?14.90:9.90,currency:'EUR'}); });
  });
