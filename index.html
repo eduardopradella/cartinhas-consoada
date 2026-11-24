@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cartinhas da Consoada | 54 cartinhas para a mesa de Natal</title>
+<meta name="description" content="54 cartinhas para pôr numa cestinha na mesa da Consoada. Cada pessoa tira uma e lê em voz alta. PDF pronto a imprimir.">
+<meta property="og:title" content="Este ano, ninguém fica de fora da Consoada">
+<meta property="og:description" content="54 cartinhas para a mesa de Natal. PDF pronto a imprimir em 15 minutos.">
+<meta name="theme-color" content="#7A1620">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,600&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<!-- PIXEL META: cole aqui o código do Pixel (PageView). InitiateCheckout dispara nos botões de compra. -->
+<style>
+/* ===== Tokens (paleta do produto: vinho, verde-pinho, dourado, creme) ===== */
+:root{
+ --wine:#7A1620;--wine2:#5C0F17;--red:#A3212B;--pine:#1E5B3F;--pine2:#14422D;--cta1:#22A35A;--cta2:#167A43;
+ --gold:#C9962E;--gold2:#E8C36A;--cream:#FFF8EE;--paper:#FBF3E4;--blush:#F6E3DC;--ink:#2E1F1C;--muted:#6E5C55;--line:#EADCC6;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Nunito,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;font-size:17px;padding-bottom:84px;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:Fraunces,Georgia,serif;line-height:1.15;letter-spacing:-.01em}
+h2{font-size:clamp(28px,6.4vw,42px);text-align:center;margin-bottom:12px;font-weight:700}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.narrow{max-width:720px;margin:0 auto}
+section{padding:64px 0;position:relative}
+.eyebrow{display:block;text-align:center;font-weight:900;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.lead{font-size:18.5px;color:var(--muted);text-align:center;max-width:640px;margin:0 auto 30px}
+/* textura papel (21st: paper-texture — pontos + linhas) */
+.paper{background-color:var(--paper);background-image:radial-gradient(rgba(122,22,32,.07) 1px,transparent 1px),repeating-linear-gradient(0deg,rgba(0,0,0,.015) 0 1px,transparent 1px 32px);background-size:8px 8px,32px 32px}
+/* marcador (21st: Highlight Text — fundo enviesado atrás da palavra) */
+.mark{position:relative;white-space:nowrap;z-index:0}
+.mark:before{content:"";position:absolute;left:-.08em;right:-.08em;bottom:-.04em;height:.3em;background:var(--gold2);transform:skew(-12deg) scaleX(0);transform-origin:left;z-index:-1;border-radius:3px;transition:transform .9s cubic-bezier(.2,.8,.2,1) .35s}
+.in .mark:before,.mark.in:before,.mark.on:before{transform:skew(-12deg) scaleX(1)}
+.hero .mark:before{background:rgba(232,195,106,.55)}
+
+/* ===== Barra marquee (21st: Marquee — translateX(calc(-100% - gap)) linear infinite) ===== */
+.ticker{background:var(--pine2);color:#fff;overflow:hidden;font-weight:800;font-size:13px;--gap:28px;display:flex;gap:var(--gap);padding:9px 0;white-space:nowrap}
+.ticker .row{display:flex;gap:var(--gap);flex-shrink:0;animation:marquee 26s linear infinite}
+.ticker span{display:inline-flex;align-items:center;gap:6px}
+.ticker b{color:var(--gold2)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(calc(-100% - var(--gap)))}}
+
+/* ===== Hero ===== */
+.hero{background:radial-gradient(900px 500px at 85% -10%,rgba(255,255,255,.14),transparent 60%),linear-gradient(165deg,var(--red) 0%,var(--wine) 55%,var(--wine2) 100%);color:#FFF6EA;padding:26px 0 46px;text-align:center;overflow:hidden;position:relative}
+.hero:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1.2px);background-size:22px 22px;pointer-events:none}
+.hero .grid{display:grid;gap:22px;align-items:center;position:relative;z-index:1}
+.hero .grid>*{min-width:0}
+.pill{display:inline-block;border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.12);backdrop-filter:blur(4px);border-radius:999px;padding:8px 16px;font-size:11.5px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+.hero h1{font-size:clamp(36px,9.6vw,62px);font-weight:800;margin:16px 0 10px;color:#fff}
+.hero .it{font-family:Fraunces,serif;font-style:italic;font-weight:500;font-size:clamp(19px,4.9vw,26px);color:#F7D9C9;margin-bottom:12px}
+.hero .sub{font-size:17px;font-weight:700;max-width:520px;margin:0 auto;opacity:.95}
+.stars{margin-top:14px;font-size:13px;font-weight:800;letter-spacing:.04em;opacity:.9}
+
+/* mockup do produto em CSS + selos (padrão: mockup com badges de números) */
+.mk{position:relative;height:360px;max-width:420px;width:100%;margin:6px auto 0}
+.sheet{position:absolute;background:#FFF9F0;border-radius:8px;box-shadow:0 24px 50px rgba(30,5,8,.45)}
+.sheet.cover{width:58%;height:90%;left:21%;top:4%;transform:rotate(3deg);overflow:hidden;z-index:3;display:flex;flex-direction:column}
+.sheet.cover .top{background:var(--red);color:#FFF6EA;text-align:center;padding:30px 8px 20px;position:relative}
+.sheet.cover .top:before{content:"★  ★   ★";position:absolute;top:8px;left:0;right:0;color:var(--gold2);font-size:12px;letter-spacing:4px}
+.sheet.cover .top b{display:block;font:800 30px/1 Fraunces,serif}
+.sheet.cover .top i{font:italic 500 17px Fraunces,serif}
+.sheet.cover .mid{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px}
+.sheet.cover .mid h4{font:700 13px/1.25 Fraunces,serif;color:var(--pine);margin-bottom:30px}
+.basket{width:90px;height:62px;position:relative}
+.basket:before{content:"";position:absolute;left:12px;right:12px;top:-28px;height:56px;border:6px solid #A0743F;border-bottom:0;border-radius:56px 56px 0 0}
+.basket .b{position:absolute;bottom:0;left:0;right:0;height:38px;background:linear-gradient(#B58550,#94683A);border-radius:6px 6px 14px 14px}
+.basket .b:after{content:"";position:absolute;left:0;right:0;top:11px;height:6px;background:var(--red)}
+.basket .c{position:absolute;bottom:32px;width:13px;height:19px;border-radius:2px}
+.sheet.cards{width:46%;height:76%;left:0;top:16%;transform:rotate(-9deg);z-index:2;padding:9px;display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.sheet.gold{width:40%;height:66%;right:0;top:13%;transform:rotate(7deg);z-index:1;padding:11px}
+.gc{background:linear-gradient(160deg,var(--gold2),var(--gold));color:#fff;border-radius:8px;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px;outline:2px solid rgba(255,255,255,.65);outline-offset:-6px}
+.gc b{font:700 16px Fraunces,serif;margin:3px 0}.gc span{font-size:10px;line-height:1.35;font-weight:700}
+.mc{background:#fff;border:2px solid var(--red);display:flex;flex-direction:column;border-radius:3px}
+.mc.g{border-color:var(--pine)}.mc.o{border-color:var(--gold)}
+.mc .h{background:var(--red);color:#fff;font:700 8.5px/1 Fraunces,serif;letter-spacing:.06em;text-align:center;padding:5px 2px}
+.mc.g .h{background:var(--pine)}.mc.o .h{background:var(--gold)}
+.mc .x{font:10.5px/1.3 Fraunces,serif;text-align:center;padding:5px;flex:1;color:#3a2a26}
+.mc .s{text-align:center;color:var(--red);font-size:10px;padding-bottom:3px}.mc.g .s{color:var(--pine)}.mc.o .s{color:var(--gold)}
+.seal{position:absolute;z-index:5;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:900;line-height:1.05;box-shadow:0 10px 24px rgba(0,0,0,.3);animation:popIn .6s cubic-bezier(.2,1.4,.4,1) both}
+.seal.s1{width:84px;height:84px;left:-4px;top:-6px;background:var(--pine);color:#fff;font-size:9.5px;letter-spacing:.06em;outline:2px dashed rgba(255,255,255,.55);outline-offset:-6px;animation-delay:.5s}
+.seal.s1 small{display:block;font-size:12.5px;margin-top:2px}
+.chip{position:absolute;right:-6px;z-index:5;background:#FFF6EA;color:var(--wine);border-radius:12px;padding:6px 10px;font-weight:900;font-size:11px;line-height:1.05;text-align:center;box-shadow:0 8px 18px rgba(0,0,0,.25);animation:popIn .6s cubic-bezier(.2,1.4,.4,1) both}
+.chip b{display:block;font-size:20px;font-family:Fraunces,serif}
+.chip.c1{top:22px;animation-delay:.7s}.chip.c2{top:92px;background:var(--gold2);animation-delay:.85s}.chip.c3{top:162px;background:var(--gold);color:#fff;animation-delay:1s}
+@keyframes popIn{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+
+/* ===== Botão CTA (padrão validado: verde, negrito, maiúsculas, pulso + brilho a varrer) ===== */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:460px;background:linear-gradient(135deg,var(--cta1),var(--cta2));color:#fff;text-decoration:none;font-weight:900;font-size:17px;letter-spacing:.03em;text-transform:uppercase;padding:18px 22px;border-radius:999px;box-shadow:0 14px 30px -10px rgba(34,163,90,.7),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .25s cubic-bezier(.2,.8,.2,1),filter .2s;animation:pulse 2.6s ease-in-out infinite;text-align:center}
+.btn:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 3.2s ease-in-out infinite}
+.btn:hover{transform:translateY(-2px) scale(1.01);filter:brightness(1.05)}
+.btn:active{transform:scale(.98)}
+@keyframes pulse{0%,100%{box-shadow:0 14px 30px -10px rgba(34,163,90,.7),0 0 0 0 rgba(34,163,90,.45)}50%{box-shadow:0 14px 30px -10px rgba(34,163,90,.7),0 0 0 12px rgba(34,163,90,0)}}
+@keyframes shine{0%{left:-60%}55%,100%{left:130%}}
+.cta-wrap{text-align:center;margin-top:30px}
+
+/* ===== Reveal on scroll (21st: Blur Fade, inView + atraso escalonado) ===== */
+.rv{opacity:0;transform:translateY(22px);filter:blur(6px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1),filter .7s ease}
+.rv.in{opacity:1;transform:none;filter:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;filter:none}.btn,.btn:after,.ticker .row,.seal,.chip{animation:none}}
+
+/* ===== Dor ===== */
+.pain{background:#fff}
+.pain .grid{display:grid;gap:28px;align-items:center}
+.pain h2{text-align:left}
+.pain p{margin-bottom:14px;font-size:18px}
+.pain .big{font:italic 600 24px/1.3 Fraunces,serif;color:var(--red)}
+.xlist{list-style:none;margin:6px 0 16px}
+.xlist li{padding:6px 0 6px 30px;position:relative;font-weight:700}
+.xlist li:before{content:"✕";position:absolute;left:0;top:7px;width:20px;height:20px;border-radius:50%;background:#F5D5D5;color:var(--red);font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:900}
+.photo{border-radius:var(--r);overflow:hidden;background:var(--blush) center/cover no-repeat;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:14px;border:2px dashed #D9B9AE;box-shadow:0 18px 40px rgba(60,20,10,.12)}
+.photo span{padding:20px;max-width:85%}
+.photo.loaded{border:0}.photo.loaded span{display:none}
+
+/* ===== Passos ===== */
+.steps{display:grid;gap:14px;margin-top:30px}
+.step{background:#fff;border-radius:var(--r);padding:22px 22px 22px 78px;position:relative;box-shadow:0 8px 26px rgba(60,20,10,.07);border:1px solid var(--line)}
+.step .n{position:absolute;left:20px;top:20px;width:42px;height:42px;border-radius:50%;background:var(--wine);color:#fff;font:800 19px Fraunces,serif;display:flex;align-items:center;justify-content:center}
+.step h3{font-size:20px;color:var(--wine);margin-bottom:4px}
+.step p{color:var(--muted);font-size:16px}
+.step.gold{background:linear-gradient(150deg,var(--gold2),var(--gold));border:0}
+.step.gold .n{background:#fff;color:var(--gold)}.step.gold h3,.step.gold p{color:#fff}
+
+/* ===== Benefícios ===== */
+.benefits{background:linear-gradient(170deg,var(--pine),var(--pine2));color:#fff}
+.benefits h2{color:#fff}.benefits .eyebrow{color:var(--gold2)}
+.bgrid{display:grid;gap:14px;margin-top:28px}
+.b{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:var(--r);padding:22px;display:flex;gap:16px;align-items:flex-start}
+.b .ic{flex:0 0 46px;height:46px;border-radius:14px;background:rgba(232,195,106,.18);display:flex;align-items:center;justify-content:center;font-size:23px}
+.b h3{color:var(--gold2);font-size:19px;margin-bottom:4px}
+.b p{opacity:.92;font-size:15.5px}
+
+/* ===== O que recebe ===== */
+.deliver .grid{display:grid;gap:30px;align-items:center}
+.deliver .grid>*,.pain .grid>*,.lugar .grid>*{min-width:0}
+.deliver h2{text-align:left}
+.check{list-style:none}
+.check li{padding:11px 0 11px 36px;position:relative;border-bottom:1px solid var(--line);font-size:17px}
+.check li:before{content:"✓";position:absolute;left:0;top:11px;width:24px;height:24px;border-radius:50%;background:var(--cta1);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:900}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.stat{background:#fff;border-radius:14px;padding:14px 8px;text-align:center;border:1px solid var(--line)}
+.stat b{display:block;font:800 32px/1.1 Fraunces,serif;color:var(--wine)}
+.stat span{font-size:12.5px;color:var(--muted);font-weight:700}
+.folha{background:#FFFDF8;border-radius:10px;box-shadow:0 22px 50px rgba(60,20,10,.16);padding:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:9px;outline:1px dashed #CDBB98;outline-offset:-6px;transform:rotate(-1.5deg)}
+.folha .mc{min-height:112px}
+
+/* ===== Temas + cartinhas ===== */
+.themes{background:#fff}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:24px}
+.t{border-radius:12px;padding:12px 6px;color:#fff;font-weight:800;font-size:14px;text-align:center}
+.t.r{background:var(--red)}.t.g{background:var(--pine)}.t.o{background:var(--gold)}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+.cards>*{min-width:0}
+.cd{background:#fff;border:2px solid var(--red);border-radius:8px;display:flex;flex-direction:column;min-height:190px;box-shadow:0 10px 24px rgba(60,20,10,.08);transition:transform .3s}
+.cd:hover{transform:translateY(-4px) rotate(-1deg)}
+.cd.g{border-color:var(--pine)}.cd.o{border-color:var(--gold)}
+.cd .h{background:var(--red);color:#fff;font:700 12px/1 Fraunces,serif;letter-spacing:.07em;text-align:center;padding:9px 4px}
+.cd.g .h{background:var(--pine)}.cd.o .h{background:var(--gold)}
+.cd p{font:15px/1.4 Fraunces,serif;text-align:center;padding:14px 10px;flex:1}
+.cd .s{text-align:center;color:var(--red);padding-bottom:10px}.cd.g .s{color:var(--pine)}.cd.o .s{color:var(--gold)}
+
+/* ===== Lugar à mesa ===== */
+.lugar .grid{display:grid;gap:26px;align-items:center}
+.lugar .gc{max-width:320px;margin:0 auto;padding:34px 22px;box-shadow:0 26px 50px rgba(120,80,10,.3);height:auto}
+.lugar .gc b{font-size:28px}.lugar .gc span{font-size:14.5px}
+.oracao{font:italic 500 18px/1.55 Fraunces,serif;color:var(--muted);border-left:3px solid var(--gold);padding-left:16px}
+
+/* ===== Usos ===== */
+.ugrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.ugrid>*{min-width:0}
+.u{background:#fff;border-radius:var(--r);padding:20px 12px;text-align:center;border:1px solid var(--line);box-shadow:0 8px 22px rgba(60,20,10,.06)}
+.u .i{font-size:32px}.u h3{font-size:17px;margin:6px 0 4px;color:var(--wine)}.u p{font-size:14px;color:var(--muted)}
+
+/* ===== Comparação de custo ===== */
+.cost{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:640px;margin:26px auto 0}
+.cost div{border-radius:var(--r);padding:20px 12px;text-align:center}
+.cost .bad{background:#fff;border:1px solid var(--line)}
+.cost .good{background:linear-gradient(160deg,var(--pine),var(--pine2));color:#fff}
+.cost b{display:block;font:800 28px Fraunces,serif;margin:6px 0}
+.cost small{font-size:13px;font-weight:700;opacity:.85;display:block}
+
+/* ===== Preços (21st: pricing com plano destacado; padrão validado: Essencial x Completo recomendado) ===== */
+.pricing{background:linear-gradient(180deg,var(--cream),var(--blush))}
+.plans{display:grid;gap:26px;margin-top:30px;align-items:start}
+.plan{background:#fff;border-radius:22px;padding:26px 22px;border:1px solid var(--line);box-shadow:0 14px 34px rgba(60,20,10,.08);position:relative}
+.plan h3{font-size:22px;color:var(--wine);text-align:center}
+.plan .desc{text-align:center;color:var(--muted);font-size:14.5px;margin:2px 0 14px}
+.plan .price{font:800 54px/1 Fraunces,serif;color:var(--wine);text-align:center}
+.plan .price sup{font-size:.45em;vertical-align:top;margin-right:2px}
+.plan .once{text-align:center;font-size:12.5px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:6px 0 16px}
+.plan ul{list-style:none;margin-bottom:18px}
+.plan li{padding:8px 0 8px 30px;position:relative;font-size:15.5px;border-bottom:1px dashed var(--line)}
+.plan li:before{content:"✓";position:absolute;left:0;top:9px;width:20px;height:20px;border-radius:50%;background:var(--cta1);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:900}
+.plan li.no{color:#AE9F97;text-decoration:line-through}
+.plan li.no:before{content:"✕";background:#E9DCD6;color:#9C8A82}
+.plan.best{border:3px solid var(--gold);box-shadow:0 26px 60px rgba(122,22,32,.18)}
+.plan.best .tag{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold2),var(--gold));color:#fff;font-weight:900;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px;white-space:nowrap;box-shadow:0 8px 18px rgba(201,150,46,.4)}
+.plan .btn{max-width:none}
+.plan .btn.light{background:#fff;color:var(--cta2);border:2px solid var(--cta1);box-shadow:none;animation:none}
+.plan .btn.light:after{display:none}
+.plan .more{text-align:center;font-weight:800;color:var(--pine);font-size:14px;margin-top:10px}
+.paylogos{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:20px}
+.paylogos span{border:1px solid #E3D6C9;border-radius:7px;padding:5px 10px;font-size:11.5px;font-weight:900;color:#5c4a44;background:#fff}
+.tip{font-size:13px;color:var(--muted);text-align:center;margin-top:10px}
+
+/* ===== Garantia ===== */
+.guarantee .g{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;max-width:680px;margin:0 auto;background:#fff;border-radius:22px;padding:30px 22px;border:1px solid var(--line)}
+.badge7{flex:0 0 120px;width:120px;height:120px;border-radius:50%;background:conic-gradient(var(--gold2),var(--gold),var(--gold2),var(--gold),var(--gold2));color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font:800 14px Fraunces,serif;box-shadow:inset 0 0 0 7px rgba(255,255,255,.4),0 14px 30px rgba(201,150,46,.35)}
+.badge7 b{font-size:44px;line-height:1}
+
+/* ===== FAQ ===== */
+.faq details{background:#fff;border-radius:14px;margin-bottom:10px;padding:16px 18px;border:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:800;list-style:none;position:relative;padding-right:30px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";position:absolute;right:0;top:-4px;font-size:26px;color:var(--gold);transition:transform .25s}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq p{margin-top:10px;color:var(--muted);font-size:16px}
+
+/* ===== Fecho com contagem real (21st: banner with countdown — setInterval 1s, padStart, tabular-nums) ===== */
+.final{background:linear-gradient(165deg,var(--red),var(--wine2));color:#fff;text-align:center;overflow:hidden}
+.final h2{color:#fff}.final p{opacity:.92;max-width:600px;margin:0 auto 22px;font-size:18px}
+.count{display:inline-flex;gap:8px;margin:8px 0 24px}
+.count div{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:10px 6px;min-width:66px}
+.count b{display:block;font:800 30px/1.1 Fraunces,serif;font-variant-numeric:tabular-nums}
+.count span{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+footer{background:#1E1513;color:#BCAEA6;font-size:13px;padding:28px 0 34px;text-align:center}
+footer p{margin-bottom:8px}
+
+/* ===== Barra fixa (padrão validado: preço + CTA visíveis desde a 1.ª dobra) ===== */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,248,238,.97);backdrop-filter:blur(8px);border-top:1px solid var(--line);box-shadow:0 -10px 30px rgba(60,20,10,.12);display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 14px}
+.sticky .p{line-height:1.1;flex-shrink:0}
+.sticky .p b{display:block;font:800 25px Fraunces,serif;color:var(--wine)}
+.sticky .p small{font-size:10.5px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.sticky .btn{width:auto;padding:14px 20px;font-size:15px}
+
+/* ===== Desktop ===== */
+@media(min-width:880px){
+ .hero{text-align:left;padding:46px 0 70px}
+ .hero .grid{grid-template-columns:1.05fr 1fr;gap:40px}
+ .hero .sub{margin:0}
+ .mk{height:440px;max-width:470px}
+ .sheet.cover .top b{font-size:36px}
+ .pain .grid,.deliver .grid,.lugar .grid{grid-template-columns:1fr 1fr;gap:44px}
+ .steps{grid-template-columns:repeat(4,1fr)}
+ .step{padding:24px 20px}
+ .step .n{position:static;margin-bottom:12px}
+ .bgrid{grid-template-columns:1fr 1fr}
+ .tgrid{grid-template-columns:repeat(9,1fr)}
+ .t{font-size:12.5px;padding:12px 4px}
+ .cards{grid-template-columns:repeat(6,1fr)}
+ .ugrid{grid-template-columns:repeat(4,1fr)}
+ .plans{grid-template-columns:1fr 1.08fr;max-width:860px;margin-left:auto;margin-right:auto}
+ .guarantee .g{flex-direction:row;text-align:left}
+ .sticky .btn{padding:14px 28px}
+}
+@media(max-width:380px){.sticky .p b{font-size:22px}.sticky .btn{font-size:13.5px;padding:13px 14px}.mc .x{font-size:9px}.mk{height:330px}}
+
+.gal.rev .row{animation-direction:reverse}
+.gal .it.pg{flex:0 0 190px;height:262px;background:#fff;padding:6px}.gal .it.pg img{object-fit:contain;border-radius:10px}
+.gal .it.ct{flex:0 0 150px;height:218px;background:transparent;box-shadow:0 10px 24px rgba(60,20,10,.16)}.gal .it.ct img{object-fit:cover}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.flt,.hm>img{animation:flt 5s ease-in-out infinite}
+.gal .it{transition:transform .3s}.gal .it:nth-child(odd){transform:translateY(-6px) rotate(-1.2deg)}.gal .it:nth-child(even){transform:translateY(6px) rotate(1.2deg)}.gal{padding:14px 0}
+@media (prefers-reduced-motion:reduce){.flt,.hm>img{animation:none}}
+/* hero com foto-mockup */
+.hm{position:relative;max-width:400px;margin:6px auto 0}
+.hm img{width:100%;height:auto;display:block;border-radius:22px;box-shadow:0 30px 60px rgba(30,5,8,.5);border:4px solid rgba(255,246,234,.85)}
+.hm .seal.s1{left:-10px;top:-12px}
+.hm .chip{right:-10px}
+.ilu{position:absolute;left:12px;bottom:10px;font-size:10.5px;font-weight:800;color:#fff;background:rgba(0,0,0,.35);padding:3px 8px;border-radius:999px}
+/* galeria com rolagem automática (21st: Marquee / Testimonials Marquee — pauseOnHover + máscara nas bordas) */
+.gal{overflow:hidden;--gap:16px;display:flex;gap:var(--gap);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);margin-top:26px}
+.gal .row{display:flex;gap:var(--gap);flex-shrink:0;animation:marquee 38s linear infinite}
+.gal:hover .row{animation-play-state:paused}
+.gal .it{flex:0 0 210px;height:250px;border-radius:16px;overflow:hidden;box-shadow:0 14px 30px rgba(60,20,10,.14);background:#fff}
+.gal .it img{width:100%;height:100%;object-fit:cover;display:block}
+.gal .it.cdw{display:flex}
+.gal .it.cdw .cd{flex:1;min-height:0;border-radius:16px;box-shadow:none}
+.gal .it.cdw .cd p{display:flex;align-items:center;justify-content:center;font-size:17px}
+.gal .it.gold .gc{border-radius:16px;padding:24px 18px}.gal .it.gold .gc b{font-size:24px}.gal .it.gold .gc span{font-size:13px}
+@media (prefers-reduced-motion:reduce){.gal .row{animation:none}}
+</style>
+</head>
+<body>
+
+<!-- Barra marquee -->
+<div class="ticker">
+ <div class="row"><span>🎄 <b>54 cartinhas</b> para a Consoada</span><span>📄 PDF pronto a imprimir</span><span>⚡ Acesso imediato por e-mail</span><span>✂️ Pronto em 15 minutos</span><span>🔒 Garantia de 7 dias</span><span>🇵🇹 Português de Portugal</span></div>
+ <div class="row" aria-hidden="true"><span>🎄 <b>54 cartinhas</b> para a Consoada</span><span>📄 PDF pronto a imprimir</span><span>⚡ Acesso imediato por e-mail</span><span>✂️ Pronto em 15 minutos</span><span>🔒 Garantia de 7 dias</span><span>🇵🇹 Português de Portugal</span></div>
+</div>
+
+<!-- 1. HERO (padrão validado: sem botão no corpo da 1.ª dobra; preço + CTA na barra fixa) -->
+<header class="hero">
+ <div class="wrap grid">
+  <div>
+   <span class="pill">🎄 Presente de Natal · PDF</span>
+   <h1>Este ano, <span class="mark on">ninguém</span> fica de fora da Consoada.</h1>
+   <p class="it">54 cartinhas para a cestinha da mesa de Natal</p>
+   <p class="sub">Antes do bacalhau, cada pessoa tira uma e lê em voz alta. Os telemóveis ficam pousados, os avós emocionam-se — e quem está longe volta a sentar-se à mesa.</p>
+   <p class="stars">✦ Feito em português de Portugal ✦ Acesso imediato ✦</p>
+  </div>
+  <div>
+   <div class="hm">
+    <img src="images/mockup.webp" alt="Cestinha com as Cartinhas da Consoada na mesa de Natal" width="720" height="1062" fetchpriority="high">
+    <div class="seal s1">PRESENTE<small>DE NATAL</small></div>
+    <div class="chip c1"><b>54</b>cartinhas</div>
+    <div class="chip c2"><b>9</b>temas</div>
+    <div class="chip c3"><b>+1</b>dourada</div>
+    <span class="ilu">Imagem ilustrativa</span>
+   </div>
+  </div>
+ </div>
+</header>
+
+<!-- 2. DOR -->
+
+<!-- GALERIA: rolagem automática (só imagens do produto; provas sociais só quando forem reais e autorizadas) -->
+<section style="padding:54px 0 46px;background:#fff">
+ <div class="wrap">
+  <span class="eyebrow rv">Veja como fica</span>
+  <h2 class="rv">A cestinha pronta para a Consoada</h2>
+ </div>
+ <div class="gal" aria-label="Exemplos das cartinhas"><div class="row"><div class="it"><img src="images/mockup.webp" alt="" loading="lazy"></div><div class="it"><img src="images/ritual-cestinha.webp" alt="Avó e neta a tirar cartinhas da cestinha" loading="lazy"></div><div class="it"><img src="images/capa-produto.webp" alt="Capa das Cartinhas da Consoada" loading="lazy"></div><div class="it"><img src="images/foto-maos-recortar.webp" alt="Mãos a recortar as cartinhas" loading="lazy"></div><div class="it cdw"><div class="cd "><div class="h">FAMÍLIA</div><p>Que esta mesa nunca fique vazia de amor. Diga o nome de alguém que o faz sentir em casa.</p><div class="s">★</div></div></div><div class="it gold"><div class="gc"><span>★</span><b>Lugar à Mesa</b><span>Digamos em voz alta o nome de quem está longe e de quem já partiu.</span></div></div><div class="it cdw"><div class="cd g"><div class="h">GRATIDÃO</div><p>Agradeça a alguém desta mesa por algo que fez por si este ano.</p><div class="s">★</div></div></div><div class="it cdw"><div class="cd "><div class="h">ALEGRIA</div><p>Qual foi a melhor prenda que alguma vez recebeu? E a pior?</p><div class="s">★</div></div></div><div class="it cdw"><div class="cd o"><div class="h">PAZ</div><p>Que esta noite as preocupações fiquem à porta. Respire fundo e sorria.</p><div class="s">★</div></div></div><div class="it cdw"><div class="cd g"><div class="h">MEMÓRIAS</div><p>Conte como era a Consoada quando era pequeno.</p><div class="s">★</div></div></div><div class="it cdw"><div class="cd o"><div class="h">QUEM ESTÁ LONGE</div><p>Há alguém longe esta noite? Diga o nome e mande-lhe um beijo.</p><div class="s">★</div></div></div></div><div class="row" aria-hidden="true"><div class="it"><img src="images/mockup.webp" alt="" loading="lazy"></div><div class="it"><img src="images/ritual-cestinha.webp" alt="Avó e neta a tirar cartinhas da cestinha" loading="lazy"></div><div class="it"><img src="images/capa-produto.webp" alt="Capa das Cartinhas da Consoada" loading="lazy"></div><div class="it"><img src="images/foto-maos-recortar.webp" alt="Mãos a recortar as cartinhas" loading="lazy"></div><div class="it cdw"><div class="cd "><div class="h">FAMÍLIA</div><p>Que esta mesa nunca fique vazia de amor. Diga o nome de alguém que o faz sentir em casa.</p><div class="s">★</div></div></div><div class="it gold"><div class="gc"><span>★</span><b>Lugar à Mesa</b><span>Digamos em voz alta o nome de quem está longe e de quem já partiu.</span></div></div><div class="it cdw"><div class="cd g"><div class="h">GRATIDÃO</div><p>Agradeça a alguém desta mesa por algo que fez por si este ano.</p><div class="s">★</div></div></div><div class="it cdw"><div class="cd "><div class="h">ALEGRIA</div><p>Qual foi a melhor prenda que alguma vez recebeu? E a pior?</p><div class="s">★</div></div></div><div class="it cdw"><div class="cd o"><div class="h">PAZ</div><p>Que esta noite as preocupações fiquem à porta. Respire fundo e sorria.</p><div class="s">★</div></div></div><div class="it cdw"><div class="cd g"><div class="h">MEMÓRIAS</div><p>Conte como era a Consoada quando era pequeno.</p><div class="s">★</div></div></div><div class="it cdw"><div class="cd o"><div class="h">QUEM ESTÁ LONGE</div><p>Há alguém longe esta noite? Diga o nome e mande-lhe um beijo.</p><div class="s">★</div></div></div></div></div>
+<p style="text-align:center;font-size:12px;color:var(--muted);margin-top:12px">Imagens ilustrativas · produto digital em PDF para imprimir</p>
+</section>
+<section class="pain">
+ <div class="wrap grid">
+  <div class="rv">
+   <span class="eyebrow" style="text-align:left">Seja sincera consigo</span>
+   <h2>A mesa está cheia. <span class="mark">Mas falta alguém.</span></h2>
+   <p>Passa o dia na cozinha. O bacalhau fica perfeito. E depois…</p>
+   <ul class="xlist">
+    <li>Os miúdos agarrados ao telemóvel</li>
+    <li>A televisão ligada a falar sozinha</li>
+    <li>Toda a gente come, levanta-se e vai para o sofá</li>
+    <li>E aquele lugar vazio de quem está lá fora — ou já partiu</li>
+   </ul>
+   <p class="big">Mais uma Consoada que passa sem ninguém dizer o que sente.</p>
+  </div>
+  <div class="photo rv" data-src="images/foto-mesa-consoada.webp"><span>📷 FOTO A ENVIAR: mesa da Consoada posta, com uma cadeira vazia e a cestinha com cartinhas</span></div>
+ </div>
+</section>
+
+<!-- 3. MECANISMO -->
+<section class="paper" id="como">
+ <div class="wrap">
+  <span class="eyebrow rv">Simples assim</span>
+  <h2 class="rv">O <span class="mark">Ritual da Cestinha</span></h2>
+  <p class="lead rv">5 minutos antes do bacalhau. Uma folha A4, uma tesoura e uma cestinha.</p>
+  <div class="steps">
+   <div class="step rv"><div class="n">1</div><h3>Imprima</h3><p>6 folhas A4, em casa ou na papelaria da esquina.</p></div>
+   <div class="step rv"><div class="n">2</div><h3>Recorte e dobre</h3><p>Ponha as cartinhas numa cestinha, taça ou sapatinho.</p></div>
+   <div class="step rv"><div class="n">3</div><h3>Passe a cestinha</h3><p>Cada pessoa tira uma cartinha e lê em voz alta.</p></div>
+   <div class="step gold rv"><div class="n">4</div><h3>«Lugar à Mesa»</h3><p>No fim, a cartinha dourada: diga o nome de quem está longe ou já partiu.</p></div>
+  </div>
+  <div class="photo rv" style="max-width:720px;margin:28px auto 0" data-src="images/foto-maos-recortar.webp"><span>📷 FOTO A ENVIAR: mãos a recortar as cartinhas e a pô-las numa cestinha com fita vermelha</span></div>
+ </div>
+</section>
+
+<!-- 4. BENEFÍCIOS -->
+<section class="benefits">
+ <div class="wrap">
+  <span class="eyebrow rv">O que muda na sua Consoada</span>
+  <h2 class="rv">5 minutos que a família nunca mais esquece</h2>
+  <div class="bgrid">
+   <div class="b rv"><div class="ic">💬</div><div><h3>Todos falam, dos netos aos avós</h3><p>É um jogo: cada um tira a sua. Até o adolescente pousa o telemóvel.</p></div></div>
+   <div class="b rv"><div class="ic">🕯️</div><div><h3>Quem está longe fica perto</h3><p>A cartinha «Lugar à Mesa» transforma a saudade numa homenagem — não numa tristeza.</p></div></div>
+   <div class="b rv"><div class="ic">🙏</div><div><h3>A fé passa aos netos, sem sermões</h3><p>Bênçãos, gratidão e memórias em palavras simples. Ninguém é obrigado a rezar.</p></div></div>
+   <div class="b rv"><div class="ic">✂️</div><div><h3>Pronto na mesma noite</h3><p>Compra, imprime, recorta. 15 minutos e a cestinha está pronta.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<!-- 5. O QUE RECEBE -->
+<section class="deliver">
+ <div class="wrap grid">
+  <div class="rv">
+   <span class="eyebrow" style="text-align:left">Tudo o que recebe</span>
+   <h2>Cartinhas da Consoada</h2>
+   <ul class="check">
+    <li><b>54 cartinhas</b> em 9 temas, prontas a recortar</li>
+    <li>Cartinha especial dourada <b>«Lugar à Mesa»</b></li>
+    <li><b>Oração da Mesa da Consoada</b></li>
+    <li>Etiqueta para a cestinha</li>
+    <li>Guia do Ritual da Cestinha (1 página)</li>
+    <li>PDF A4 a cores — imprima as vezes que quiser</li>
+   </ul>
+   <div class="stats"><div class="stat"><b>54</b><span>cartinhas</span></div><div class="stat"><b>9</b><span>temas</span></div><div class="stat"><b>15</b><span>min a preparar</span></div></div>
+  </div>
+  <div class="rv"><img class="flt" src="images/hero-mockup.webp" alt="O PDF das Cartinhas da Consoada: capa, folhas de cartinhas e guia" width="1400" height="1100" loading="lazy" style="width:100%;height:auto;border-radius:18px;box-shadow:0 24px 50px rgba(60,20,10,.22)"></div>
+ </div>
+ <div class="gal rev" aria-label="Páginas do PDF"><div class="row"><div class="it pg"><img src="images/preview-capa.webp" alt="Capa do PDF" loading="lazy"></div><div class="it pg"><img src="images/preview-como-fazer.webp" alt="Guia do Ritual da Cestinha" loading="lazy"></div><div class="it pg"><img src="images/preview-folha.webp" alt="Folha com 9 cartinhas" loading="lazy"></div><div class="it pg"><img src="images/preview-lugar-a-mesa.webp" alt="Cartinha dourada e Oração da Mesa" loading="lazy"></div><div class="it pg"><img src="images/capa-produto.webp" alt="Capa das Cartinhas da Consoada" loading="lazy"></div></div><div class="row" aria-hidden="true"><div class="it pg"><img src="images/preview-capa.webp" alt="Capa do PDF" loading="lazy"></div><div class="it pg"><img src="images/preview-como-fazer.webp" alt="Guia do Ritual da Cestinha" loading="lazy"></div><div class="it pg"><img src="images/preview-folha.webp" alt="Folha com 9 cartinhas" loading="lazy"></div><div class="it pg"><img src="images/preview-lugar-a-mesa.webp" alt="Cartinha dourada e Oração da Mesa" loading="lazy"></div><div class="it pg"><img src="images/capa-produto.webp" alt="Capa das Cartinhas da Consoada" loading="lazy"></div></div></div>
+ <p class="wrap rv" style="text-align:center;font-weight:800;margin-top:14px">Espreite por dentro do PDF ↑</p>
+ <div class="cta-wrap rv wrap"><a class="btn js-cta" href="#planos">Quero as minhas cartinhas</a></div>
+</section>
+
+<!-- 6. TEMAS -->
+<section class="themes">
+ <div class="wrap">
+  <span class="eyebrow rv">Para todas as idades</span>
+  <h2 class="rv">9 temas: para rezar, agradecer, rir e lembrar</h2>
+  <div class="tgrid rv">
+   <div class="t r">Família</div><div class="t g">Gratidão</div><div class="t o">Paz</div><div class="t r">Esperança</div><div class="t g">Fé</div><div class="t o">Perdão</div><div class="t r">Alegria</div><div class="t g">Memórias</div><div class="t o">Quem Está Longe</div>
+  </div>
+  <div class="gal" aria-label="Exemplos de cartinhas"><div class="row"><div class="it ct"><img src="images/cartinha-1.webp" alt="Cartinha Família" loading="lazy"></div><div class="it ct"><img src="images/cartinha-2.webp" alt="Cartinha Paz" loading="lazy"></div><div class="it ct"><img src="images/cartinha-3.webp" alt="Cartinha Esperança" loading="lazy"></div><div class="it ct"><img src="images/cartinha-4.webp" alt="Cartinha Fé" loading="lazy"></div><div class="it ct"><img src="images/cartinha-5.webp" alt="Cartinha Alegria" loading="lazy"></div><div class="it ct"><img src="images/cartinha-6.webp" alt="Cartinha Quem Está Longe" loading="lazy"></div></div><div class="row" aria-hidden="true"><div class="it ct"><img src="images/cartinha-1.webp" alt="Cartinha Família" loading="lazy"></div><div class="it ct"><img src="images/cartinha-2.webp" alt="Cartinha Paz" loading="lazy"></div><div class="it ct"><img src="images/cartinha-3.webp" alt="Cartinha Esperança" loading="lazy"></div><div class="it ct"><img src="images/cartinha-4.webp" alt="Cartinha Fé" loading="lazy"></div><div class="it ct"><img src="images/cartinha-5.webp" alt="Cartinha Alegria" loading="lazy"></div><div class="it ct"><img src="images/cartinha-6.webp" alt="Cartinha Quem Está Longe" loading="lazy"></div></div></div>
+ </div>
+</section>
+
+<!-- 7. LUGAR À MESA (diferencial) -->
+<section class="paper lugar">
+ <div class="wrap grid">
+  <div class="rv"><div class="gc"><span style="font-size:20px">★</span><b>Lugar à Mesa</b><span>Nesta mesa há sempre lugar para quem amamos. Digamos agora, em voz alta, o nome de quem está longe e de quem já partiu. Esta noite, ninguém fica de fora da Consoada.</span></div></div>
+  <div class="rv">
+   <span class="eyebrow" style="text-align:left">O momento que emociona a mesa inteira</span>
+   <h2 style="text-align:left">A cartinha dourada</h2>
+   <p style="margin-bottom:16px">É lida por último. Diz-se o nome do filho que está em França, da mãe que já partiu, do neto que não pôde vir. E, por um minuto, a família está toda junta outra vez.</p>
+   <p class="oracao">«Senhor Jesus, que nasceste numa noite como esta, abençoa esta mesa e as mãos que a prepararam…»<br><small style="font-style:normal;font-family:Nunito">— Oração da Mesa da Consoada, incluída</small></p>
+  </div>
+ </div>
+</section>
+
+<!-- 8. FORMAS DE USAR -->
+<section>
+ <div class="wrap">
+  <span class="eyebrow rv">Uma cestinha, muitas formas de usar</span>
+  <h2 class="rv">Para quem é</h2>
+  <div class="ugrid">
+   <div class="u rv"><div class="i">🎄</div><h3>Na Consoada</h3><p>Com a família toda à mesa, antes do bacalhau.</p></div>
+   <div class="u rv"><div class="i">✈️</div><h3>Para quem está lá fora</h3><p>Envie o PDF à família e esteja presente à distância.</p></div>
+   <div class="u rv"><div class="i">🏡</div><h3>No lar ou hospital</h3><p>Leve a cestinha a quem vai passar o Natal sozinho.</p></div>
+   <div class="u rv"><div class="i">🎁</div><h3>Para oferecer</h3><p>Uma prenda com significado para a mãe ou a avó.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- 9. PORQUE CUSTA TÃO POUCO -->
+<section class="paper">
+ <div class="wrap">
+  <span class="eyebrow rv">Faça as contas</span>
+  <h2 class="rv">Porque custa só €9,90?</h2>
+  <p class="lead rv">Porque é um PDF: não há papel, impressão nem portes do nosso lado. Imprime em casa e usa todos os Natais.</p>
+  <div class="cost rv">
+   <div class="bad"><small>Escrever, desenhar e montar sozinha</small><b>Horas</b><small>em pleno dezembro</small></div>
+   <div class="good"><small>Cartinhas da Consoada</small><b>15 minutos</b><small>menos de 19 cêntimos por cartinha</small></div>
+  </div>
+ </div>
+</section>
+
+<!-- 10. PLANOS (padrão: Essencial x Completo recomendado) -->
+<section class="pricing" id="planos">
+ <div class="wrap">
+  <span class="eyebrow rv">Escolha a sua cestinha</span>
+  <h2 class="rv">Garanta já as suas cartinhas</h2>
+  <div class="plans">
+   <div class="plan rv">
+    <h3>Essencial</h3>
+    <p class="desc">As cartinhas para a mesa</p>
+    <div class="price"><sup>€</sup>9,90</div>
+    <p class="once">Pagamento único</p>
+    <ul>
+     <li>54 cartinhas em 9 temas</li>
+     <li>Cartinha dourada «Lugar à Mesa»</li>
+     <li>Oração da Mesa da Consoada</li>
+     <li>Etiqueta + guia do ritual</li>
+     <li class="no">12 postais «Quem Está Longe» para WhatsApp</li>
+     <li class="no">24 etiquetas de prendas com bênção</li>
+    </ul>
+    <a class="btn light js-checkout" data-plan="essencial" href="#planos">Quero só o essencial</a>
+   </div>
+   <div class="plan best rv">
+    <span class="tag">⭐ Recomendado</span>
+    <h3>Completo</h3>
+    <p class="desc">Para a mesa e para quem está longe</p>
+    <img class="flt" src="images/bump-pack.webp" alt="Pack Quem Está Longe: postais e etiquetas" width="980" height="640" loading="lazy" style="width:100%;height:auto;border-radius:12px;margin:10px 0 4px">
+    <div class="price"><sup>€</sup>14,90</div>
+    <p class="once">Pagamento único</p>
+    <ul>
+     <li>54 cartinhas em 9 temas</li>
+     <li>Cartinha dourada «Lugar à Mesa»</li>
+     <li>Oração da Mesa da Consoada</li>
+     <li>Etiqueta + guia do ritual</li>
+     <li><b>12 postais «Quem Está Longe»</b> para enviar pelo WhatsApp na Noite de Natal</li>
+     <li><b>24 etiquetas de prendas</b> com mensagens de bênção</li>
+    </ul>
+    <a class="btn js-checkout" data-plan="completo" href="#planos">Quero o completo</a>
+    <p class="more">Por só mais €5</p>
+   </div>
+  </div>
+  <div class="paylogos rv"><span>MB WAY</span><span>Multibanco</span><span>VISA</span><span>Mastercard</span><span>🔒 Checkout seguro</span></div>
+  <p class="tip">Com MB WAY recebe o PDF na hora. Com referência Multibanco, recebe logo após o pagamento.</p>
+ </div>
+</section>
+
+<!-- 11. GARANTIA -->
+<section class="guarantee" style="padding-top:10px">
+ <div class="wrap">
+  <div class="g rv">
+   <div class="badge7"><b>7</b>DIAS</div>
+   <div><h3 style="font-size:22px;margin-bottom:6px">Risco zero: garantia de 7 dias</h3><p>Imprima, experimente com a família e, se não gostar, peça o reembolso nos primeiros 7 dias. Devolvemos 100% do valor, sem perguntas.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- 12. FAQ -->
+<section class="faq">
+ <div class="wrap narrow">
+  <span class="eyebrow rv">Dúvidas</span>
+  <h2 class="rv">Perguntas frequentes</h2>
+  <details class="rv"><summary>Vou receber alguma coisa pelo correio?</summary><p>Não. É um produto digital (PDF). Recebe o acesso no seu e-mail logo após o pagamento.</p></details>
+  <details class="rv"><summary>Não tenho impressora. Consigo usar?</summary><p>Sim. Qualquer papelaria ou reprografia imprime as 9 páginas por poucos cêntimos. Leve o ficheiro numa pen ou envie-o por e-mail.</p></details>
+  <details class="rv"><summary>Os miúdos não vão achar uma seca?</summary><p>Não. Há cartinhas de alegria, memórias e gratidão, não só de oração. Funciona como um jogo: cada um tira a sua.</p></details>
+  <details class="rv"><summary>É muito religioso para a minha família?</summary><p>É inspirado na tradição católica do Natal, mas a maioria das cartinhas fala de família, gratidão e memórias. Ninguém é obrigado a rezar.</p></details>
+  <details class="rv"><summary>Está em português de Portugal?</summary><p>Sim, com as nossas tradições: Consoada, bacalhau, Missa do Galo, presépio, Nossa Senhora.</p></details>
+  <details class="rv"><summary>Posso imprimir mais de uma vez?</summary><p>Sim, quantas vezes quiser, para usar todos os anos com a família.</p></details>
+  <details class="rv"><summary>Quanto tempo demora a preparar?</summary><p>Cerca de 15 minutos para imprimir e recortar. O ritual à mesa dura 5 minutos.</p></details>
+  <details class="rv"><summary>É uma assinatura?</summary><p>Não. É um pagamento único, por MB WAY, referência Multibanco ou cartão, num checkout seguro.</p></details>
+  <details class="rv"><summary>E se não gostar?</summary><p>Tem 7 dias de garantia. Peça o reembolso e devolvemos o valor, sem perguntas.</p></details>
+ </div>
+</section>
+
+<!-- 13. FECHO -->
+<section class="final">
+ <div class="wrap">
+  <h2 class="rv">A Consoada é daqui a…</h2>
+  <div class="count" id="count"><div><b id="cd-d">00</b><span>dias</span></div><div><b id="cd-h">00</b><span>horas</span></div><div><b id="cd-m">00</b><span>min</span></div><div><b id="cd-s">00</b><span>seg</span></div></div>
+  <p class="rv">Imprima hoje, recorte amanhã e, no dia 24, ponha a cestinha na mesa. Este ano, ninguém fica de fora.</p>
+  <a class="btn js-cta" href="#planos">Quero as minhas cartinhas</a>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <p>© 2026 Cartinhas da Consoada · Produto digital (PDF). Nenhum produto físico é enviado.</p>
+  <p>Pagamentos processados por plataforma segura. Este site não é afiliado ao Facebook, Instagram ou Meta.</p>
+  <p>Projeto independente, sem ligação oficial a qualquer paróquia ou instituição da Igreja.</p>
+ </div>
+</footer>
+
+<!-- Barra fixa -->
+<div class="sticky"><div class="p"><small>A partir de</small><b>€9,90</b></div><a class="btn js-cta" href="#planos">Quero as minhas cartinhas</a></div>
+
+<script>
+/* ====== CONFIGURAR: links de checkout (Hotmart/Cakto) ====== */
+var CHECKOUT = { essencial: "", completo: "" }; // ex.: "https://pay.hotmart.com/XXXX?checkoutMode=10"
+(function(){
+ var qs = location.search ? location.search.slice(1) : "";
+ document.querySelectorAll('.js-checkout').forEach(function(a){
+  var url = CHECKOUT[a.dataset.plan];
+  if (url) a.href = url + (qs ? (url.indexOf('?')>-1?'&':'?') + qs : '');
+  a.addEventListener('click', function(){ if (window.fbq) fbq('track','InitiateCheckout',{value:a.dataset.plan==='completo'?14.90:9.90,currency:'EUR'}); });
+ });
+ // reveal on scroll (blur-fade escalonado)
+ var els = document.querySelectorAll('.rv');
+ if ('IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ var d = [].indexOf.call(e.target.parentNode.children, e.target) % 4; e.target.style.transitionDelay = (d*0.09)+'s'; e.target.classList.add('in'); io.unobserve(e.target);} }); }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){ io.observe(el); });
+ } else { els.forEach(function(el){ el.classList.add('in'); }); }
+ // fotos reais: aparecem quando o ficheiro existir em /images
+ document.querySelectorAll('.photo[data-src]').forEach(function(el){ var i = new Image(); i.onload = function(){ el.style.backgroundImage='url('+el.dataset.src+')'; el.classList.add('loaded'); }; i.src = el.dataset.src; });
+ // contagem real até à Consoada: 24/12 às 20h, hora de Lisboa (UTC no inverno)
+ var target = Date.UTC(new Date().getUTCFullYear(), 11, 24, 20, 0, 0);
+ function p(n){ return String(n).padStart(2,'0'); }
+ function tick(){ var ms = target - Date.now(); if (ms <= 0) { document.getElementById('count').style.display='none'; return; }
+  document.getElementById('cd-d').textContent = p(Math.floor(ms/864e5)); document.getElementById('cd-h').textContent = p(Math.floor(ms%864e5/36e5));
+  document.getElementById('cd-m').textContent = p(Math.floor(ms%36e5/6e4)); document.getElementById('cd-s').textContent = p(Math.floor(ms%6e4/1e3)); }
+ tick(); setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>
