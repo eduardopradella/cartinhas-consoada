@@ -8,6 +8,7 @@
 <meta property="og:title" content="Este ano, ninguém fica de fora da Consoada">
 <meta property="og:description" content="54 cartinhas para a mesa de Natal. PDF pronto a imprimir em 15 minutos.">
 <meta name="theme-color" content="#7A1620">
+<link rel="preload" href="images/mockup.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito.woff2" as="font" type="font/woff2" crossorigin>
 <!-- Meta Pixel Code -->
@@ -46,6 +47,7 @@ h2{font-size:clamp(28px,6.4vw,42px);text-align:center;margin-bottom:12px;font-we
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 .narrow{max-width:720px;margin:0 auto}
 section{padding:64px 0;position:relative}
+section:nth-of-type(n+3){content-visibility:auto;contain-intrinsic-size:auto 800px}
 .eyebrow{display:block;text-align:center;font-weight:900;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
 .lead{font-size:18.5px;color:var(--muted);text-align:center;max-width:640px;margin:0 auto 30px}
 /* textura papel (21st: paper-texture — pontos + linhas) */
